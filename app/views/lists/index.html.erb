@@ -1,7 +1,13 @@
-<h1>Lists</h1>
-<p><%= link_to "Add new list", "lists/new" %></p>
-  <ul>
+<a class="btn btn-ghost m-2 d-flex justify-content-center" href="lists/new">Add new list</a>
+<br>
+<div class="cards d-flex justify-content-center">
     <% @lists.each do |list|%>
-      <li><%= link_to list.name, list_path(list) %></li>
+      <div class="card m-2" style="width: 18rem;">
+       <%= image_tag "#{list.movies.first.poster_url}", alt: "Movie" %>
+        <div class="card-body">
+          <h5 class="card-title"><%=list.name%></h5>
+          <a href=<%=list_path(list)%> class="btn btn-primary">Details</a>
+        </div>
+      </div>
     <% end %>
-  </ul>
+</div>
