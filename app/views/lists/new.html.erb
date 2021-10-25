@@ -1,8 +1,13 @@
-<h1>Add new List</h1>
+<div class="title text-center m-2"><h3>Add new list</h3></div>
 
-<%= simple_form_for(@list) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="container-form d-flex justify-content-center text-center">
+  <div class="form-new-list">
+    <%= simple_form_for(@list) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.submit %>
+    <% end %>
+    <a href=<%=lists_path%> class="btn btn-dark text-center">Back</a>
+  </div>
+</div>

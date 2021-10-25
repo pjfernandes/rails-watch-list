@@ -1,12 +1,16 @@
-<a class="btn btn-ghost m-2 d-flex justify-content-center" href="lists/new">Add new list</a>
+<div class="btn-div d-flex justify-content-center m-2">
+  <a class="btn btn-ghost mt-4"  href="lists/new">Add new list</a>
+</div>
 <br>
-<div class="cards d-flex justify-content-center">
+<div class="cards row justify-content-center">
     <% @lists.each do |list|%>
-      <div class="card m-2" style="width: 18rem;">
-       <%= image_tag "#{list.movies.first.poster_url}", alt: "Movie" %>
+      <div class="card col-4 m-2 d-flex align-items-center" style="1rem">
+      <div class="movie-image mt-4 d-flex justify-content-center">
+        <%= image_tag "#{list.movies.first.poster_url}", width: "30%", alt: "Movie" %>
+       </div>
         <div class="card-body">
-          <h5 class="card-title"><%=list.name%></h5>
-          <a href=<%=list_path(list)%> class="btn btn-primary">Details</a>
+          <h5 class="card-title text-center"><%=list.name%></h5>
+          <a href=<%=list_path(list)%> class="btn btn-dark text-center">Details</a>
         </div>
       </div>
     <% end %>
